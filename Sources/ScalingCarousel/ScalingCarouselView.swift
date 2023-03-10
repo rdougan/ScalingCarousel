@@ -302,6 +302,10 @@ extension InvisibleScrollDelegate: UIScrollViewDelegate {
         guard let indexPath = currentCenterCellIndex else { return }
         lastCurrentCenterCellIndex = indexPath
     }
+
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        delegate?.scrollViewWillBeginDragging?(scrollView)
+    }
     
     private func updateOffSet() {
         contentOffset = invisibleScrollView.contentOffset
